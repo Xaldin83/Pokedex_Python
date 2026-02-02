@@ -9,7 +9,7 @@ def return_page():
     os.system("python ../Pokedex/main.py")
 
 liste_attaque = [Griffe,Rugissement, Flammeche, Brouillard, Draco_Souffle, Crocs_Feu, Tranche, Lance_Flamme, Grimace, Danse_Flammes, Feu_dEnfer,Boutefeu,Charge,Draco_Charge]
-Pokemon = Classe_Pokemon.Pokemon("Salamèche",4,[39, 52, 43, 60, 50, 65],liste_attaque,"./Pokémon_img/G1/Salamèche.png","Feu","None","Torche","Force Soleil","None",0.6,8.5)
+Pokemon = Classe_Pokemon.Pokemon("Reptincel",5,[58, 64, 58, 80, 65, 80],liste_attaque,"./Pokémon_img/G1/Reptincel.png","Feu","None","Brasier","Force Soleil","None",1.1,19)
 
 fenetre = tk.Tk()
 
@@ -46,7 +46,7 @@ button_return = tk.Button(fenetre,text="Retour",command=return_page)
 button_return.grid(row=5, column=0, columnspan=4)
 
 
-fenetre.title("Salamèche")
+fenetre.title("Reptincel")
 fenetre.geometry("1024x768")
 fenetre.mainloop()
 

@@ -35,7 +35,8 @@ def ajout():
         h = height.get()
         w = weight.get()
         generation = listbox.get(listbox.curselection())
-        fonctions_ajouts.ajout_pkm(nm,nb,stat,t1,t2,s1,s2,s3,h,w,generation)
+        c = capacity.get()
+        fonctions_ajouts.ajout_pkm(nm,nb,stat,t1,t2,s1,s2,s3,h,w,generation,c)
         messagebox.showinfo("Information", "Pokémon rajouté.")
     else:
         messagebox.showinfo("Information", "Pokémon déjà disponible.")
@@ -110,6 +111,10 @@ weight = tk.Entry(fenetre)
 height.pack()
 weight.pack()
 
+capacity_label = tk.Label(fenetre,text="Attaques du pokémon")
+capacity_label.pack()
+capacity = tk.Entry(fenetre)
+capacity.pack()
 
 button = tk.Button(fenetre,text="Ajouter",command=ajout)
 button.pack()
