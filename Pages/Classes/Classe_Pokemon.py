@@ -1,7 +1,7 @@
 import tkinter as tk
 
 class Pokemon:
-    def __init__(self, name = "", number = 0, stat = [], capacity=[], img = "", type1 = "",type2 = None):
+    def __init__(self, name = "", number = 0, stat = [], capacity=[], img = "", type1 = "",type2 = None, skill1 = "", skill2 ="", skill3 = None, height = 0, weight = 0):
         """
         Docstring pour __init__
         :param name: name du pokémon, en str.
@@ -19,6 +19,11 @@ class Pokemon:
         self.type1 = type1
         self.type2 = type2
         self.img = img
+        self.skill1 = skill1
+        self.skill2 = skill2
+        self.skil31 = skill3
+        self.height = height
+        self.weight = weight
 
     def list_capacity(self,listbox):
         """

@@ -1,5 +1,5 @@
 from Classes import Classe_Pokemon
-from BDDAttaque import *
+from BDD.BDDAttaque import *
 import tkinter as tk
 from PIL import ImageTk, Image
 import os
@@ -9,7 +9,7 @@ def return_page():
     os.system("python ../Pokedex/main.py")
 
 liste_attaque = [Charge,Rugissement,Fouet_Lianes,Croissance,Vampigraine,TranchHerbe,Poudre_Dodo,Poudre_Toxik,Canon_Graine,Belier,Doux_Parfum,Synthese,Soucigraine,Megafouet,Lance_Soleil,Feuille_Magik,Amnesie,Cradovague,Damocles]
-Bulbizarre = Classe_Pokemon.Pokemon("Bulbizarre",1,[45,49,49,65,65,45],liste_attaque,"./Pokémon_img/G1/Bulbizarre.png","Plante","Poison")
+Bulbizarre = Classe_Pokemon.Pokemon("Bulbizarre",1,[45,49,49,65,65,45],liste_attaque,"./Pokémon_img/G1/Bulbizarre.png","Plante","Poison","Engrais","Chlorophylle",None,0.7, 6.9)
 
 fenetre = tk.Tk()
 
@@ -27,6 +27,14 @@ type2 = ImageTk.PhotoImage(Image.open(f"./Type/Miniature {Bulbizarre.type2}.png"
 Label_type2 = tk.Label(fenetre,image=type2)
 Label_type2.grid(row=1,column=1)
 
+
+Label_skill=tk.Label( fenetre, text=f"Talents:\n{Bulbizarre.skill1} | {Bulbizarre.skill2}")
+Label_skill.grid(row=2,column=0)
+
+Label_height_weight = tk.Label(fenetre, text=f"Taille : {Bulbizarre.height}m\nPoids : {Bulbizarre.weight} kg")
+Label_height_weight.grid(row=3,column=0)
+
+
 listbox_capacity = tk.Listbox(fenetre,width=50)
 listbox_capacity.grid(row=4, column=0, columnspan=2)
 Bulbizarre.list_capacity(listbox_capacity)
@@ -37,8 +45,10 @@ Bulbizarre.list_stat(listbox_stat)
 
 
 button_return = tk.Button(fenetre,text="Retour",command=return_page)
-button_return.grid(row=5, column=0)
+button_return.grid(row=5, column=0, columnspan=4)
 
+
+fenetre.title("Bulbizarre")
 fenetre.geometry("1024x768")
 fenetre.mainloop()
 
