@@ -8,7 +8,7 @@ def return_page():
     fenetre.destroy()
     os.system("python ../Pokedex/main.py")
 
-liste_attaque = []
+liste_attaque = [Tempete_Florale, Danse_Fleurs,Charge,Rugissement,Fouet_Lianes,Croissance,Vampigraine,TranchHerbe,Poudre_Dodo,Poudre_Toxik,Canon_Graine,Belier,Doux_Parfum,Synthese,Soucigraine,Megafouet,Lance_Soleil,Feuille_Magik,Amnesie,Cradovague,Damocles]
 Florizarre = Classe_Pokemon.Pokemon("Florizarre",3,[80, 82, 83, 100, 100, 80],liste_attaque,"./Pokémon_img/G1/Florizarre.png","Plante","Poison","Engrais","Chlorophylle","None",2,100)
 
 fenetre = tk.Tk()
@@ -48,7 +48,7 @@ button_return = tk.Button(fenetre,text="Retour",command=return_page)
 button_return.grid(row=5, column=0, columnspan=4)
 
 
-fenetre.title()
+fenetre.title("Florizarre")
 fenetre.geometry("1024x768")
 fenetre.mainloop()
 

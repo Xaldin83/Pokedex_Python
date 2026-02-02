@@ -8,7 +8,7 @@ def return_page():
     fenetre.destroy()
     os.system("python ../Pokedex/main.py")
 
-liste_attaque = []
+liste_attaque = [Charge,Rugissement,Fouet_Lianes,Croissance,Vampigraine,TranchHerbe,Poudre_Dodo,Poudre_Toxik,Canon_Graine,Belier,Doux_Parfum,Synthese,Soucigraine,Megafouet,Lance_Soleil,Feuille_Magik,Amnesie,Cradovague,Damocles]
 Herbizarre = Classe_Pokemon.Pokemon("Herbizarre",2,[60, 62, 63, 80, 80, 60],liste_attaque,"./Pokémon_img/G1/Herbizarre.png","Plante","Poison","Engrais","Chlorophylle","None",1,13)
 
 fenetre = tk.Tk()

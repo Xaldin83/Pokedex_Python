@@ -3,7 +3,7 @@ import os
 
 
 def index():
-    with open('index.txt', 'r') as f:
+    with open('index.txt', 'r', encoding='utf-8') as f:
         lignes = f.readlines()  # Retourne une liste
 
     for ligne in lignes:
@@ -11,7 +11,6 @@ def index():
 
 def refound():
     pokemon = listbox_pokemon.get(listbox_pokemon.curselection())
-    print(pokemon)
     if(pokemon[-1]=="\n"):
        pokemon=pokemon[:-1]
     fenetre.destroy()
