@@ -21,7 +21,7 @@ class Pokemon:
         self.img = img
         self.skill1 = skill1
         self.skill2 = skill2
-        self.skil31 = skill3
+        self.skill3 = skill3
         self.height = height
         self.weight = weight
 

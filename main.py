@@ -15,7 +15,7 @@ def refound():
     if(pokemon[-1]=="\n"):
        pokemon=pokemon[:-1]
     screen.destroy()
-    os.system(f"python ../Pokedex/Pages/{pokemon}.py")
+    os.system(f"""python "../Pokedex/Pages/{pokemon}.py"\n""")
 
 def ajout():
     screen.destroy()
