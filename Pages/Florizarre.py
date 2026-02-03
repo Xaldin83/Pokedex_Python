@@ -1,5 +1,5 @@
 from Classes import Classe_Pokemon
-from BDD.BDDAttaque import *
+from Pages.Classes.BDDAttaque import *
 import tkinter as tk
 from PIL import ImageTk, Image
 import os

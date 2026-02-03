@@ -1,4 +1,4 @@
-from Classes.Classe_Attaque import Capacity
+from Classe_Attaque import Capacity
 
 EcrasFace = Capacity("Ecras'Face","Normal",35,40,100,"Physique")
 Poing_Karate = Capacity("Poing Karate","Combat",25,50,100,"Physique")
