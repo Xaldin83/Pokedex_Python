@@ -1,6 +1,7 @@
 import tkinter as tk
 import os
 import index
+import Global_page
 
 
 def research():
@@ -15,7 +16,7 @@ def refound():
     if(pokemon[-1]=="\n"):
        pokemon=pokemon[:-1]
     screen.destroy()
-    os.system(f"""python "../Pokedex/Pages/{pokemon}.py"\n""")
+    Global_page.main(pokemon)
 
 def add():
     screen.destroy()

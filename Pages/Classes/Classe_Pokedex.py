@@ -1,11 +1,13 @@
 import tkinter as tk
+from Classe_Pokemon import Pokemon
 
 class Page_Pokedex:
-    def __init__(self,  name = "", number = 0, generation = ""):
+    def __init__(self,  name = "", number = 0, generation = "",stat = [], capacity=[], img = "", type1 = "",type2 = None, skill1 = "", skill2 ="", skill3 = None, height = 0, weight = 0):
 
         self.name = name
         self.number = number
         self.generation = generation
+        self.pokemon = Pokemon(name,number,stat,capacity,img,type1,type2,skill1,skill2,skill3,height,weight)
 
 
 class Pokedex:
@@ -40,3 +42,8 @@ class Pokedex:
         self.tri_number()
         for i in self.liste:
             listbox.insert(tk.END, i.name)
+
+    def found_pages(self, name):
+        for i in self.liste:
+            if(i.name == name):
+                return i
