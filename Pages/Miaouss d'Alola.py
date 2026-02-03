@@ -49,7 +49,7 @@ Pokemon.list_stat(listbox_stat)
 button_return = tk.Button(screen,text="Retour",command=return_page)
 button_return.grid(row=5, column=0)
 button_modification = tk.Button(screen, text="Modifier", command=modif)
-button_modification.grid(row=5, column=1)
+button_modification.grid(row=5, column=3)
 
 
 screen.title("Miaouss d'Alola")
