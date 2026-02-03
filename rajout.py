@@ -13,14 +13,13 @@ fenetre = tk.Tk()
 def ajout():
     nm = name.get()
     verification = True
-    with open('index.txt', 'r', encoding='utf-8') as f:
+    with open('index.py', 'r', encoding='utf-8') as f:
         lignes = f.readlines()  # Retourne une liste
 
     for ligne in lignes:
-        if(nm ==ligne):
+        if(nm in ligne):
             verification=False
     if(verification):
-        fonctions_ajouts.ajout_index(nm)
         nb = int(number.get())
         stat = [int(pv.get()),int(attack.get()),int(defense.get()),int(special_attack.get()),int(special_defense.get()),int(speed.get())]
         t1 = type1.get()
@@ -36,6 +35,7 @@ def ajout():
         w = weight.get()
         generation = listbox.get(listbox.curselection())
         c = capacity.get()
+        fonctions_ajouts.ajout_index(nm,nb,generation)
         fonctions_ajouts.ajout_pkm(nm,nb,stat,t1,t2,s1,s2,s3,h,w,generation,c)
         messagebox.showinfo("Information", "Pokémon rajouté.")
     else:

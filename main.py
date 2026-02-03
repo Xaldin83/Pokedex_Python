@@ -1,13 +1,7 @@
 import tkinter as tk
 import os
+import index
 
-
-def index():
-    with open('index.txt', 'r', encoding='utf-8') as f:
-        lignes = f.readlines()  # Retourne une liste
-
-    for ligne in lignes:
-        listbox_pokemon.insert(tk.END, ligne)
 
 def refound():
     pokemon = listbox_pokemon.get(listbox_pokemon.curselection())
@@ -31,7 +25,7 @@ title.pack()
 listbox_pokemon = tk.Listbox(fenetre,width=50)
 listbox_pokemon.pack()
 
-index()
+index.pokedex.affichage_general(listbox_pokemon)
 
 button_search = tk.Button(fenetre,text="Afficher",command=refound)
 button_search.pack()

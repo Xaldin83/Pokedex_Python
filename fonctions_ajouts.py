@@ -1,6 +1,9 @@
-def ajout_index(txt):
+def ajout_index(name,number,generation):
+    fichier=open(f"index.py","a",encoding='utf-8')
+    fichier.write(f"""\npokedex.ajout("{name}",{number},"{generation}")""")
+    fichier.close()
     fichier=open(f"index.txt","a",encoding='utf-8')
-    fichier.write(f"\n{txt}")
+    fichier.write(f"""\n{name}""")
     fichier.close()
 
 
