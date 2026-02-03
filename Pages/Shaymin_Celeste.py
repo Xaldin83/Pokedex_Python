@@ -6,7 +6,7 @@ import os
 
 def screen_form():
     screen.destroy()
-    os.system("python ./Pages/Shaymin_Celeste.py")
+    os.system("python ./Pages/Shaymin.py")
 
 def modif():
     screen.destroy()
@@ -16,8 +16,8 @@ def return_page():
     screen.destroy()
     os.system("python ../Pokedex/main.py")
 
-list_capacity = [Croissance, Feuille_Magik, Vampigraine, Synthese,Doux_Parfum,Calinerie, Soucigraine, Champ_Herbu, Eco_Sphere,Doux_Baiser, Voeu_Soin,Fulmigraine]
-Pokemon = Classe_Pokemon.Pokemon("Shaymin",492,[100, 100, 100, 100, 100, 100],list_capacity,"./Pokémon_img/G4/Shaymin.png","Plante","None","Médic Nature","","None",0.2,2.1)
+list_capacity = [Croissance, Feuille_Magik, Vampigraine, Vive_Attaque,Doux_Parfum,Calinerie, Soucigraine, Lame_dAir, Eco_Sphere,Doux_Baiser, Tempete_Verte,Fulmigraine]
+Pokemon = Classe_Pokemon.Pokemon("Shaymin",492,[100, 103,75,120,75,127],list_capacity,"./Pokémon_img/Formes/Shaymin (Forme Céleste).png","Plante","Vol","Sérénité","None","None",0.4,5.2)
 
 screen = tk.Tk()
 
@@ -31,6 +31,9 @@ Label_image.grid(row = 0,column=3,rowspan=4)
 type1 = ImageTk.PhotoImage(Image.open(f"./Type/Miniature {Pokemon.type1}.png"))
 Label_type1 = tk.Label(screen,image=type1)
 Label_type1.grid(row=1,column=0)
+type2 = ImageTk.PhotoImage(Image.open(f"./Type/Miniature {Pokemon.type2}.png"))
+Label_type2 = tk.Label(screen,image=type2)
+Label_type2.grid(row=1,column=1)
 
 
 
@@ -53,7 +56,7 @@ Pokemon.list_stat(listbox_stat)
 button_return = tk.Button(screen,text="Retour",command=return_page)
 button_return.grid(row=5, column=0)
 
-button_form = tk.Button(screen, text= "Afficher la forme Céleste", command=screen_form)
+button_form = tk.Button(screen, text= "Afficher la forme Terrestre", command=screen_form)
 button_form.grid(row=1,column=5)
 
 button_modification = tk.Button(screen, text="Modifier", command=modif)
