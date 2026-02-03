@@ -8,13 +8,13 @@ def return_page():
     fenetre.destroy()
     os.system("python ../Pokedex/main.py")
 
-liste_attaque = []
-Pokemon = Classe_Pokemon.Pokemon("Méga-Florizarre",3.1,[80, 100, 123, 122, 120, 80],liste_attaque,"./Pokémon_img/Mega/Méga-Florizarre.png","Plante","Poison","Isograisse","","None",2.4,155.5)
+liste_attaque = [Tempete_Florale, Danse_Fleurs,Charge,Rugissement,Fouet_Lianes,Croissance,Vampigraine,TranchHerbe,Poudre_Dodo,Poudre_Toxik,Canon_Graine,Belier,Doux_Parfum,Synthese,Soucigraine,Megafouet,Lance_Soleil,Feuille_Magik,Amnesie,Cradovague,Damocles]
+Pokemon = Classe_Pokemon.Pokemon("Florizarre Gigamax",3.2,[80, 82, 83, 100, 100, 80],liste_attaque,"./Pokémon_img/Gigamax/GFlorizarre.png","Plante","Poison","Engrais","Chlorophylle","None",24,0)
 
 fenetre = tk.Tk()
 
 name = tk.Label(fenetre, text=Pokemon.name,font=("Arial",41))
-name.grid(row=0,column=0)
+name.grid(row=0,column=0,columnspan=2)
 
 image=ImageTk.PhotoImage(Image.open(Pokemon.img))
 Label_image = tk.Label(fenetre,image=image)
@@ -28,7 +28,7 @@ Label_type2 = tk.Label(fenetre,image=type2)
 Label_type2.grid(row=1,column=1)
 
 
-Label_skill=tk.Label(fenetre, text=f"Talents:\n{Pokemon.skill1}")
+Label_skill=tk.Label(fenetre, text=f"Talents:\n{Pokemon.skill1} | {Pokemon.skill2}")
 Label_skill.grid(row=2,column=0)
 
 Label_height_weight = tk.Label(fenetre, text=f"Taille : {Pokemon.height}m\nPoids : {Pokemon.weight}kg")
@@ -48,7 +48,7 @@ button_return = tk.Button(fenetre,text="Retour",command=return_page)
 button_return.grid(row=5, column=0, columnspan=4)
 
 
-fenetre.title("Méga-Florizarre")
+fenetre.title("GFlorizarre")
 fenetre.geometry("1024x768")
 fenetre.mainloop()
 

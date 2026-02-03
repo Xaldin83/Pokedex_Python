@@ -18,10 +18,10 @@ class Pokedex:
     def tri_number(self):
         n=len(self.liste)
         i=0
-        while(i<n-2):
+        while(i<n):
             mini = i
             j=i+1
-            while(j<n-1):
+            while(j<n):
                 if(self.liste[j].number<self.liste[mini].number):
                     mini = j
                 j+=1

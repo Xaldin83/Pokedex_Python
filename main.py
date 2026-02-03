@@ -5,7 +5,10 @@ import index
 
 def research():
     generation = champ_search.get()
-    index.pokedex.affichage_generation(generation, listbox_pokemon)
+    if(generation == ""):
+        index.pokedex.affichage_general(listbox_pokemon)
+    else:
+        index.pokedex.affichage_generation(generation, listbox_pokemon)
 
 def refound():
     pokemon = listbox_pokemon.get(listbox_pokemon.curselection())
@@ -36,6 +39,9 @@ button_display.pack()
 button_add= tk.Button(fenetre,text="Ajouter",command=ajout)
 button_add.pack()
 
+
+search = tk.Label(fenetre,text="Ecrivez la génération que vous cherchez.")
+search.pack()
 champ_search = tk.Entry(fenetre)
 champ_search.pack()
 button_search= tk.Button(fenetre,text="Rechercher",command=research)
