@@ -4,6 +4,10 @@ import tkinter as tk
 from PIL import ImageTk, Image
 import os
 
+def modif():
+    screen.destroy()
+    os.system("python ../Pokedex/modification.py")
+
 def return_page():
     screen.destroy()
     os.system("python ../Pokedex/main.py")
@@ -43,7 +47,9 @@ Pokemon.list_stat(listbox_stat)
 
 
 button_return = tk.Button(screen,text="Retour",command=return_page)
-button_return.grid(row=5, column=0, columnspan=4)
+button_return.grid(row=5, column=0)
+button_modification = tk.Button(screen, text="Modifier", command=modif)
+button_modification.grid(row=5, column=1)
 
 
 screen.title("Reptincel")

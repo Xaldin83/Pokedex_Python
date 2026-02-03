@@ -17,11 +17,11 @@ def refound():
     screen.destroy()
     os.system(f"""python "../Pokedex/Pages/{pokemon}.py"\n""")
 
-def ajout():
+def add():
     screen.destroy()
     os.system(f"python ./rajout.py")
 
-def quitter():
+def leave():
     screen.quit()
 
 screen = tk.Tk()
@@ -36,7 +36,7 @@ index.pokedex.affichage_general(listbox_pokemon)
 
 button_display = tk.Button(screen,text="Afficher",command=refound)
 button_display.pack()
-button_add= tk.Button(screen,text="Ajouter",command=ajout)
+button_add= tk.Button(screen,text="Ajouter",command=add)
 button_add.pack()
 
 
@@ -48,7 +48,7 @@ button_search= tk.Button(screen,text="Rechercher",command=research)
 button_search.pack()
 
 
-button_quit = tk.Button(screen, text="Quitter",command=quitter)
+button_quit = tk.Button(screen, text="Quitter",command=leave)
 button_quit.pack()
 
 
