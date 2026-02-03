@@ -17,7 +17,7 @@ def modif_pkm(name,number,stat,type1,type2,skill1,skill2,skill3,height,weight,ge
 
     with open("./index.py", "w", encoding='utf-8') as fp:
         for line in lines:
-            if line.strip("\n") != f"{name}":
+            if f"{name}" not in line.strip("\n"):
                 fp.write(line)
     file=open(f"./index.py","a",encoding='utf-8')
     file.write(f"""pokedex.ajout("{name}",{number},"{generation}]",{stat},[{capacity}],"{link}","{type1}","{type2}","{skill1}","{skill2}","{skill3}",{height},{weight})""")
