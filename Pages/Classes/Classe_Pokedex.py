@@ -29,12 +29,14 @@ class Pokedex:
             i+=1
     
     def affichage_generation(self,generation,listbox):
+        listbox.delete(0, listbox.size()-1)
         self.tri_number()
         for i in self.liste:
             if(i.generation==generation):
                 listbox.insert(tk.END, i.name)
 
     def affichage_general(self,listbox):
+        listbox.delete(0, listbox.size()-1)
         self.tri_number()
         for i in self.liste:
             listbox.insert(tk.END, i.name)
