@@ -14,14 +14,14 @@ def ajout():
     nm = name.get()
     verification = True
     with open('index.py', 'r', encoding='utf-8') as f:
-        lignes = f.readlines()  # Retourne une liste
+        lines = f.readlines()  # Retourne une liste
 
-    for ligne in lignes:
-        if(nm in ligne):
+    for line in lines:
+        if(nm in line):
             verification=False
     if(verification):
         nb = int(number.get())
-        stat = [int(pv.get()),int(attack.get()),int(defense.get()),int(special_attack.get()),int(special_defense.get()),int(speed.get())]
+        stat = [int(hp.get()),int(attack.get()),int(defense.get()),int(special_attack.get()),int(special_defense.get()),int(speed.get())]
         t1 = type1.get()
         t2 = type2.get()
         if (t2==""):
@@ -74,15 +74,15 @@ listbox.insert(tk.END, "Gigamax")
 listbox.insert(tk.END, "Mega")
 listbox.insert(tk.END, "Formes")
 
-stat_label = tk.Label(screen,text="PV | ATK | DEF | ATK_S | DEF_S | VIT")
+stat_label = tk.Label(screen,text="hp | ATK | DEF | ATK_S | DEF_S | VIT")
 stat_label.pack()
-pv = tk.Entry(screen)
+hp = tk.Entry(screen)
 attack = tk.Entry(screen)
 defense = tk.Entry(screen)
 special_attack = tk.Entry(screen)
 special_defense = tk.Entry(screen)
 speed = tk.Entry(screen)
-pv.pack()
+hp.pack()
 attack.pack()
 defense.pack()
 special_attack.pack()
