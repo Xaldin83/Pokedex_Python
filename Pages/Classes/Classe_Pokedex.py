@@ -14,8 +14,8 @@ class Pokedex:
     def __init__(self):
         self.liste = []
 
-    def ajout(self,  name = "", number = 0, generation = ""):
-        self.liste+=[Page_Pokedex(name,number,generation)]
+    def ajout(self,  name = "", number = 0, generation = "",stat = [], capacity=[], img = "", type1 = "",type2 = None, skill1 = "", skill2 ="", skill3 = None, height = 0, weight = 0):
+        self.liste+=[Page_Pokedex(name,number,generation,stat,capacity,img,type1,type2,skill1,skill2,skill3,height,weight)]
     
     def tri_number(self):
         n=len(self.liste)
@@ -46,7 +46,7 @@ class Pokedex:
     def found_pages(self, name):
         for i in self.liste:
             if(i.name == name):
-                return i
+                return i.pokemon
             
 
 class Pokemon:
@@ -96,3 +96,7 @@ class Pokemon:
         listbox.insert(tk.END, f"ATK_S : {self.stat [3]}")
         listbox.insert(tk.END, f"DEF_S : {self.stat [4]}")
         listbox.insert(tk.END, f"VIt : {self.stat [5]}")
+
+
+    def afficher(self):
+        print(self.name,self.number,self.stat,self.capacity,self.type1,self.type2,self.img,self.skill1,self.skill2,self.skill3,self.height,self.weight)

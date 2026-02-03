@@ -32,20 +32,21 @@ def main(name):
     type1 = ImageTk.PhotoImage(Image.open(f"./Type/Miniature {Pokemon.type1}.png"))
     Label_type1 = tk.Label(screen,image=type1)
     Label_type1.grid(row=1,column=0)
+    
     if(Pokemon.type2 != None):
         type2 = ImageTk.PhotoImage(Image.open(f"./Type/Miniature {Pokemon.type2}.png"))
         Label_type2 = tk.Label(screen,image=type2)
-        Label_type2.grid(row=1,column=0)
+        Label_type2.grid(row=1,column=1)
 
 
     if(Pokemon.skill2 == None and Pokemon.skill3 == None):
         Label_skill=tk.Label(screen, text=f"Talents:\n{Pokemon.skill1}")
         Label_skill.grid(row=2,column=0)
     elif(Pokemon.skill3 == None):
-        Label_skill=tk.Label(screen, text=f"Talents:\n{Pokemon.skill1}")
+        Label_skill=tk.Label(screen, text=f"Talents:\n{Pokemon.skill1} | {Pokemon.skill2}")
         Label_skill.grid(row=2,column=0)
     else:
-        Label_skill=tk.Label(screen, text=f"Talents:\n{Pokemon.skill1}")
+        Label_skill=tk.Label(screen, text=f"Talents:\n{Pokemon.skill1} | {Pokemon.skill2} | {Pokemon.skill3}")
         Label_skill.grid(row=2,column=0)
 
     Label_height_weight = tk.Label(screen, text=f"Taille : {Pokemon.height}m\nPoids : {Pokemon.weight}kg")

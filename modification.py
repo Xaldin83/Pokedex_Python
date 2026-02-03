@@ -13,7 +13,7 @@ screen = tk.Tk()
 def modif():
     nm = name.get()
     verification = True
-    with open('index.py', 'r', encoding='utf-8') as f:
+    with open('index.txt', 'r', encoding='utf-8') as f:
         lines = f.readlines()  # Retourne une liste
 
     for line in lines:
