@@ -4,7 +4,7 @@ import index
 
 
 def research():
-    generation = champ_search.get()
+    generation = field_search.get()
     if(generation == ""):
         index.pokedex.affichage_general(listbox_pokemon)
     else:
@@ -14,44 +14,44 @@ def refound():
     pokemon = listbox_pokemon.get(listbox_pokemon.curselection())
     if(pokemon[-1]=="\n"):
        pokemon=pokemon[:-1]
-    fenetre.destroy()
+    screen.destroy()
     os.system(f"python ../Pokedex/Pages/{pokemon}.py")
 
 def ajout():
-    fenetre.destroy()
+    screen.destroy()
     os.system(f"python ./rajout.py")
 
 def quitter():
-    fenetre.quit()
+    screen.quit()
 
-fenetre = tk.Tk()
+screen = tk.Tk()
 
-title = tk.Label(fenetre,text="Bienvenue\nChoisissez le pokémon que vous voulez consulter.")
+title = tk.Label(screen,text="Bienvenue\nChoisissez le pokémon que vous voulez consulter.")
 title.pack()
 
-listbox_pokemon = tk.Listbox(fenetre,width=50)
+listbox_pokemon = tk.Listbox(screen,width=50)
 listbox_pokemon.pack()
 
 index.pokedex.affichage_general(listbox_pokemon)
 
-button_display = tk.Button(fenetre,text="Afficher",command=refound)
+button_display = tk.Button(screen,text="Afficher",command=refound)
 button_display.pack()
-button_add= tk.Button(fenetre,text="Ajouter",command=ajout)
+button_add= tk.Button(screen,text="Ajouter",command=ajout)
 button_add.pack()
 
 
-search = tk.Label(fenetre,text="Ecrivez la génération que vous cherchez.")
+search = tk.Label(screen,text="Ecrivez la génération que vous cherchez.")
 search.pack()
-champ_search = tk.Entry(fenetre)
-champ_search.pack()
-button_search= tk.Button(fenetre,text="Rechercher",command=research)
+field_search = tk.Entry(screen)
+field_search.pack()
+button_search= tk.Button(screen,text="Rechercher",command=research)
 button_search.pack()
 
 
-button_quit = tk.Button(fenetre, text="Quitter",command=quitter)
+button_quit = tk.Button(screen, text="Quitter",command=quitter)
 button_quit.pack()
 
 
-fenetre.title("Main")
-fenetre.geometry("1024x768")
-fenetre.mainloop()
+screen.title("Main")
+screen.geometry("1024x768")
+screen.mainloop()

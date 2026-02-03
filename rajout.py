@@ -5,10 +5,10 @@ import os
 
 
 def return_page():
-    fenetre.destroy()
+    screen.destroy()
     os.system("python ../Pokedex/main.py")
 
-fenetre = tk.Tk()
+screen = tk.Tk()
 
 def ajout():
     nm = name.get()
@@ -28,6 +28,8 @@ def ajout():
             t2=None
         s1 = skill1.get()
         s2 = skill2.get()
+        if (s2==""):
+            s2=None
         s3 = skil31.get()
         if (s3==""):
             s3=None
@@ -41,21 +43,21 @@ def ajout():
     else:
         messagebox.showinfo("Information", "Pokémon déjà disponible.")
 
-title = tk.Label(fenetre,text="Rajouter un Pokémon")
+title = tk.Label(screen,text="Rajouter un Pokémon")
 title.pack()
 
 
-name_label = tk.Label(fenetre,text="Nom")
+name_label = tk.Label(screen,text="Nom")
 name_label.pack()
-name = tk.Entry(fenetre)
+name = tk.Entry(screen)
 name.pack()
 
-number_label = tk.Label(fenetre,text="Numéro Pokédex")
+number_label = tk.Label(screen,text="Numéro Pokédex")
 number_label.pack()
-number = tk.Entry(fenetre)
+number = tk.Entry(screen)
 number.pack()
 
-listbox = tk.Listbox(fenetre)
+listbox = tk.Listbox(screen)
 listbox.pack()
 
 #Ajout d'éléments à la liste déroulante
@@ -72,14 +74,14 @@ listbox.insert(tk.END, "Gigamax")
 listbox.insert(tk.END, "Mega")
 listbox.insert(tk.END, "Formes")
 
-stat_label = tk.Label(fenetre,text="PV | ATK | DEF | ATK_S | DEF_S | VIT")
+stat_label = tk.Label(screen,text="PV | ATK | DEF | ATK_S | DEF_S | VIT")
 stat_label.pack()
-pv = tk.Entry(fenetre)
-attack = tk.Entry(fenetre)
-defense = tk.Entry(fenetre)
-special_attack = tk.Entry(fenetre)
-special_defense = tk.Entry(fenetre)
-speed = tk.Entry(fenetre)
+pv = tk.Entry(screen)
+attack = tk.Entry(screen)
+defense = tk.Entry(screen)
+special_attack = tk.Entry(screen)
+special_defense = tk.Entry(screen)
+speed = tk.Entry(screen)
 pv.pack()
 attack.pack()
 defense.pack()
@@ -87,41 +89,41 @@ special_attack.pack()
 special_defense.pack()
 speed.pack()
 
-type_label = tk.Label(fenetre,text="Type(s) du pokémon")
+type_label = tk.Label(screen,text="Type(s) du pokémon")
 type_label.pack()
-type1 = tk.Entry(fenetre)
-type2 = tk.Entry(fenetre)
+type1 = tk.Entry(screen)
+type2 = tk.Entry(screen)
 type1.pack()
 type2.pack()
 
-skills_label = tk.Label(fenetre,text="Talent(s) du pokémon")
+skills_label = tk.Label(screen,text="Talent(s) du pokémon")
 skills_label.pack()
-skill1 = tk.Entry(fenetre)
-skill2 = tk.Entry(fenetre)
-skil31 = tk.Entry(fenetre)
+skill1 = tk.Entry(screen)
+skill2 = tk.Entry(screen)
+skil31 = tk.Entry(screen)
 
 skill1.pack()
 skill2.pack()
 skil31.pack()
 
-height_weight_label = tk.Label(fenetre,text="Taille et poids du pokémon")
+height_weight_label = tk.Label(screen,text="Taille et poids du pokémon")
 height_weight_label.pack()
-height = tk.Entry(fenetre)
-weight = tk.Entry(fenetre)
+height = tk.Entry(screen)
+weight = tk.Entry(screen)
 height.pack()
 weight.pack()
 
-capacity_label = tk.Label(fenetre,text="Attaques du pokémon")
+capacity_label = tk.Label(screen,text="Attaques du pokémon")
 capacity_label.pack()
-capacity = tk.Entry(fenetre)
+capacity = tk.Entry(screen)
 capacity.pack()
 
-button = tk.Button(fenetre,text="Ajouter",command=ajout)
+button = tk.Button(screen,text="Ajouter",command=ajout)
 button.pack()
 
-button_return = tk.Button(fenetre,text="Retour",command=return_page)
+button_return = tk.Button(screen,text="Retour",command=return_page)
 button_return.pack()
 
-fenetre.title("Rajout")
-fenetre.geometry("1024x768")
-fenetre.mainloop()
+screen.title("Rajout")
+screen.geometry("1024x768")
+screen.mainloop()
