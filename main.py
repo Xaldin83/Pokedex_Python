@@ -1,4 +1,5 @@
 import tkinter as tk
+from tkinter import messagebox
 import os
 import index
 import Global_page
@@ -12,11 +13,15 @@ def research():
         index.pokedex.affichage_generation(generation, listbox_pokemon)
 
 def refound():
-    pokemon = listbox_pokemon.get(listbox_pokemon.curselection())
-    if(pokemon[-1]=="\n"):
-       pokemon=pokemon[:-1]
-    screen.destroy()
-    Global_page.main(pokemon)
+    try:
+        pokemon = listbox_pokemon.get(listbox_pokemon.curselection())
+        if(pokemon[-1]=="\n"):
+            pokemon=pokemon[:-1]
+        screen.destroy()
+        Global_page.main(pokemon)
+    except tk.TclError:
+        messagebox.showinfo("Erreur","Aucun pokémon sélectionné.")
+
 
 def add():
     screen.destroy()
