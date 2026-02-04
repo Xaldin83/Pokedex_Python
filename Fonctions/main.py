@@ -1,8 +1,8 @@
 import tkinter as tk
 from tkinter import messagebox
 import os
-import index.index as index
-from Fonctions import Global_page
+import index as index
+import Global_page
 
 
 def research():

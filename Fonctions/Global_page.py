@@ -1,4 +1,4 @@
-import index.index as index
+import index
 from Classes.BDDAttaque import *
 import tkinter as tk
 from PIL import ImageTk, Image
