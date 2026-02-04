@@ -7,7 +7,7 @@ class Page_Pokedex:
         self.name = name
         self.number = number
         self.generation = generation
-        self.pokemon = Pokemon(name,number,stat,capacity,img,type1,type2,skill1,skill2,skill3,height,weight)
+        self.pokemon = Pokemon(name,number,stat,capacity,img,type1,type2,skill1,skill2,skill3,height,weight,generation)
 
 
 class Pokedex:
@@ -50,7 +50,7 @@ class Pokedex:
             
 
 class Pokemon:
-    def __init__(self, name = "", number = 0, stat = [], capacity=[], img = "", type1 = "",type2 = None, skill1 = "", skill2 ="", skill3 = None, height = 0, weight = 0):
+    def __init__(self, name = "", number = 0, stat = [], capacity=[], img = "", type1 = "",type2 = None, skill1 = "", skill2 ="", skill3 = None, height = 0, weight = 0, generation = ""):
         """
         Docstring pour __init__
         :param name: name du pokémon, en str.
@@ -73,6 +73,7 @@ class Pokemon:
         self.skill3 = skill3
         self.height = height
         self.weight = weight
+        self.generation = generation
 
     def list_capacity(self,listbox):
         """

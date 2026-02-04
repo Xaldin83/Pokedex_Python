@@ -1,5 +1,5 @@
 import tkinter as tk
-from tkinter import messagebox
+from tkinter import messagebox, ttk
 import fonctions_ajouts
 import os
 
@@ -11,38 +11,46 @@ def return_page():
 screen = tk.Tk()
 
 def modif():
-    nm = name.get()
-    verification = True
-    with open('index.txt', 'r', encoding='utf-8') as f:
-        lines = f.readlines()  # Retourne une liste
+    try:
+        nm = name.get()
+        verification = True
+        with open('index.txt', 'r', encoding='utf-8') as f:
+            lines = f.readlines()  # Retourne une liste
 
-    for line in lines:
-        if(nm in line):
-            verification=False
-    if(not verification):
-        nb = int(number.get())
-        stat = [int(hp.get()),int(attack.get()),int(defense.get()),int(special_attack.get()),int(special_defense.get()),int(speed.get())]
-        t1 = type1.get()
-        t2 = type2.get()
-        if (t2==""):
-            t2=None
-        s1 = skill1.get()
-        s2 = skill2.get()
-        if (s2==""):
-            s2=None
-        s3 = skil31.get()
-        if (s3==""):
-            s3=None
-        h = height.get()
-        w = weight.get()
-        generation = listbox.get(listbox.curselection())
-        c = capacity.get()
-        fonctions_ajouts.modif_pkm(nm,nb,stat,t1,t2,s1,s2,s3,h,w,generation,c)
-        messagebox.showinfo("Information", "Pokémon modifié.")
-    else:
-        messagebox.showinfo("Information", "Page non existante.")
+        for line in lines:
+            if(nm in line):
+                verification=False
+        if(not verification):
+            nb = int(number.get())
+            stat = [int(hp.get()),int(attack.get()),int(defense.get()),int(special_attack.get()),int(special_defense.get()),int(speed.get())]
+            t1 = type1.get()
+            t2 = type2.get()
+            if (t2==""):
+                t2=None
+            s1 = skill1.get()
+            s2 = skill2.get()
+            if (s2==""):
+                s2=None
+            s3 = skil31.get()
+            if (s3==""):
+                s3=None
+            h = height.get()
+            w = weight.get()
+            generation = listbox.get(listbox.curselection())
+            if(os.path.exists(f"./Pokémon_img/{generation}/{nm}.png")):
+                c = capacity.get()
+                fonctions_ajouts.modif_pkm(nm,nb,stat,t1,t2,s1,s2,s3,h,w,generation,c)
+                messagebox.showinfo("Information", "Pokémon Ajouté.")
+            else:
+                messagebox.showinfo("Information", "Chemin d'image non valide.\nLa génération ou le nom ne correspond pas.")
+        else:
+            messagebox.showinfo("Information", "Page déjà existante..")
+    except ValueError:
+        messagebox.showinfo("Information", "Certaines informations sont érronés ou vide.")
+    except tk.TclError:
+        messagebox.showinfo("Information","Le type ou la génération n'est pas déterminé.")
 
-title = tk.Label(screen,text="Modifier un Pokémon")
+title = tk.Label(screen,text="Ajouter un Pokémon")
 title.pack()
 
 
@@ -58,22 +66,13 @@ number.pack()
 
 listbox = tk.Listbox(screen)
 listbox.pack()
+dossier=os.listdir('./Pokémon_img')
 
-#Ajout d'éléments à la liste déroulante
-listbox.insert(tk.END, "G1")
-listbox.insert(tk.END, "G2")
-listbox.insert(tk.END, "G3")
-listbox.insert(tk.END, "G4")
-listbox.insert(tk.END, "G5")
-listbox.insert(tk.END, "G6")
-listbox.insert(tk.END, "G7")
-listbox.insert(tk.END, "G8")
-listbox.insert(tk.END, "G9")
-listbox.insert(tk.END, "Gigamax")
-listbox.insert(tk.END, "Mega")
-listbox.insert(tk.END, "Formes")
+for i in dossier[1:]:
+    listbox.insert(tk.END, f"{i}")
 
-stat_label = tk.Label(screen,text="hp | ATK | DEF | ATK_S | DEF_S | VIT")
+
+stat_label = tk.Label(screen,text="HP | ATK | DEF | ATK_S | DEF_S | VIT")
 stat_label.pack()
 hp = tk.Entry(screen)
 attack = tk.Entry(screen)
@@ -90,10 +89,15 @@ speed.pack()
 
 type_label = tk.Label(screen,text="Type(s) du pokémon")
 type_label.pack()
-type1 = tk.Entry(screen)
-type2 = tk.Entry(screen)
+
+type1 = ttk.Combobox(screen)
+type2 = ttk.Combobox(screen)
 type1.pack()
 type2.pack()
+
+type1['values']=('Acier', 'Combat', 'Dragon', 'Eau', 'Electrik', 'Fée', 'Feu', 'Glace', 'Insecte', 'Normal', 'Plante', 'Poison', 'Psy', 'Roche', 'Sol', 'Spectre', 'Ténèbres', 'Vol')
+type2['values']=('Acier', 'Combat', 'Dragon', 'Eau', 'Electrik', 'Fée', 'Feu', 'Glace', 'Insecte', 'Normal', 'Plante', 'Poison', 'Psy', 'Roche', 'Sol', 'Spectre', 'Ténèbres', 'Vol',None)
+
 
 skills_label = tk.Label(screen,text="Talent(s) du pokémon")
 skills_label.pack()
