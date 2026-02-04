@@ -1,5 +1,5 @@
-from Pages.Classes.Classe_Pokedex import Pokedex
-from Pages.Classes.BDDAttaque import *
+from Classes.Classe_Pokedex import Pokedex
+from Classes.BDDAttaque import *
 
 pokedex = Pokedex()
 
