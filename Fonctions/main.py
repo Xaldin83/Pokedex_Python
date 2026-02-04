@@ -25,7 +25,7 @@ def refound():
 
 def add():
     screen.destroy()
-    os.system(f"python ./rajout.py")
+    os.system(f"python ./Fonctions/rajout.py")
 
 def leave():
     screen.quit()

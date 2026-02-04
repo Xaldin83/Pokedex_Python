@@ -6,7 +6,7 @@ import os
 
 def return_page():
     screen.destroy()
-    os.system("python ../Pokedex/main.py")
+    os.system("python ./Fonctions/main.py")
 
 screen = tk.Tk()
 
@@ -14,7 +14,7 @@ def modif():
     try:
         nm = name.get()
         verification = True
-        with open('index.txt', 'r', encoding='utf-8') as f:
+        with open('./index.txt', 'r', encoding='utf-8') as f:
             lines = f.readlines()  # Retourne une liste
 
         for line in lines:

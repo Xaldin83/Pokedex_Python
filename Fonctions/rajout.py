@@ -6,7 +6,7 @@ import os
 
 def return_page():
     screen.destroy()
-    os.system("python ../Pokedex/main.py")
+    os.system("python ./Fonctions/main.py")
 
 screen = tk.Tk()
 

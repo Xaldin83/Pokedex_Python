@@ -14,15 +14,15 @@ def main(name):
     def delete():
         delete_pokemon(Pokemon.name,Pokemon.generation)
         screen.destroy()
-        os.system("python ../Pokedex/main.py")
+        os.system("python ./Fonctions/main.py")
 
     def modif():
         screen.destroy()
-        os.system("python ../Pokedex/modification.py")
+        os.system("python ./Fonctions/modification.py")
 
     def return_page():
         screen.destroy()
-        os.system("python ../Pokedex/main.py")
+        os.system("python ./Fonctions/main.py")
 
     Pokemon = index.pokedex.found_pages(name)
 
