@@ -13,14 +13,14 @@ def research():
         index.pokedex.affichage_generation(generation, listbox_pokemon)
 
 def refound():
-    try:
+    # try:
         pokemon = listbox_pokemon.get(listbox_pokemon.curselection())
         if(pokemon[-1]=="\n"):
             pokemon=pokemon[:-1]
         screen.destroy()
         Global_page.main(pokemon)
-    except tk.TclError:
-        messagebox.showinfo("Erreur","Aucun pokémon sélectionné.")
+    # except tk.TclError:
+    #     messagebox.showinfo("Erreur","Aucun pokémon sélectionné.")
 
 
 def add():
@@ -46,16 +46,18 @@ button_add= tk.Button(screen,text="Ajouter",command=add)
 button_add.pack()
 
 
-search = tk.Label(screen,text="Ecrivez la génération que vous cherchez.")
-search.pack()
-field_search = tk.Entry(screen)
-field_search.pack()
-button_search= tk.Button(screen,text="Rechercher",command=research)
-button_search.pack()
+# search = tk.Label(screen,text="Ecrivez la génération que vous cherchez.")
+# search.pack()
+# field_search = tk.Entry(screen)
+# field_search.pack()
+# button_search= tk.Button(screen,text="Rechercher",command=research)
+# button_search.pack()
 
 
 button_quit = tk.Button(screen, text="Quitter",command=leave)
 button_quit.pack()
+
+
 
 
 screen.title("Main")
